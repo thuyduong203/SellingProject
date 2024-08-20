@@ -1,0 +1,11 @@
+var apiURL = "http://localhost:8080";
+var categoryURL = apiURL + "/guest/category";
+var productURL = apiURL + "/guest/product";
+var materialURL = apiURL + "/guest/material";
+var colorURL = apiURL + "/guest/color";
+var sizeURL = apiURL + "/guest/size";
+var ctspURL = apiURL + "/guest/product-detail";
+var cartURL = apiURL + "/cart";
+var cartDetailURL = apiURL + "/cart-detail";
+var billURL = apiURL + "/admin/bill-";
+var customerURL = apiURL + "/customer";

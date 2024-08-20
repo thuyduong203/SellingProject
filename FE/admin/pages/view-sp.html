@@ -1,0 +1,45 @@
+<section class="right container">
+  <div class="form-add">
+    <form action="">
+      <div class="col-6">
+        <label>Ma:</label>
+        <input type="text" class="form-control" ng-model="request.code" />
+      </div>
+      <div class="col-6">
+        <label>Ten:</label>
+        <input type="text" class="form-control" ng-model="request.name" />
+      </div>
+      <div class="col-6">
+        <label>status:</label>
+        <input type="text" class="form-control" ng-model="request.status" />
+      </div>
+      <a href="#product-add">
+        <button class="btn btn-success col-1 m-3">Thêm</button>
+      </a>
+    </form>
+  </div>
+  <div class="tblHienThi">
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="sanPham in listProduct">
+          <td>{{sanPham.code}}</td>
+          <td>{{sanPham.name}}</td>
+          <td>{{sanPham.status}}</td>
+          <td>
+            <a href="#product/detail/{{sanPham.id}}"><button>Detail</button></a>
+            <a href="#/product/delete/{{sanPham.id}}"
+              ><button>Delete</button></a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

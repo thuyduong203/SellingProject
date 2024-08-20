@@ -1,0 +1,235 @@
+<section class="right">
+  <div class="form-add">
+    <form action="">
+      <div class="row">
+        <div class="col-md-4">
+          <span>
+            <label for="inputState" class="form-label">San pham:</label>
+            <select
+              id="inputState"
+              class="form-select"
+              name="idSanPham"
+              ng-model="request.productId"
+            >
+              <option value="null">---Chon----</option>
+              <option ng-repeat="product in listProduct" value="{{product.id}}">
+                {{product.name}}
+              </option>
+            </select>
+          </span>
+        </div>
+        <div class="col-md-1">
+          <br />
+          <a href="#view-quan-ly-san-pham">
+            <button type="button" class="btn btn-outline-danger">+</button>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Chat lieu:</label>
+          <select
+            class="form-select"
+            name="idMaterial"
+            ng-model="request.materialId"
+          >
+            <option value="null">---Chon----</option>
+            <option
+              ng-repeat="material in listMaterial"
+              value="{{material.id}}"
+            >
+              {{material.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <br />
+          <a href="#view-quan-ly-chat-lieu">
+            <button type="button" class="btn btn-outline-danger">+</button>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Category:</label>
+          <!-- <select ng-model="form_SV.loaiSV" id="inputState" class="form-select">
+        <option value="Loai 1" ng-checked="form_SV.loaiSV == 'Loai 1'">
+          Loai 1
+        </option>
+        <option value="Loai 2" ng-checked="form_SV.loaiSV == 'Loai 2'">
+          Loai 2
+        </option>
+        <option value="Loai 3" ng-checked="form_SV.loaiSV == 'Loai 3'">
+          Loai 3
+        </option>
+      </select> -->
+          <select
+            class="form-select"
+            name="idCategory"
+            ng-model="request.categoryId"
+          >
+            <option value="null">---Chon----</option>
+            <option ng-repeat="cate in listCategory" value="{{cate.id}}">
+              {{cate.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <br />
+          <a href="#view-quan-ly-category">
+            <button type="button" class="btn btn-outline-danger">+</button>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Mau sac:</label>
+          <select
+            class="form-select"
+            name="idMauSac"
+            ng-model="request.colorId"
+          >
+            <option value="null">---Chon----</option>
+            <option ng-repeat="color in listColor" value="{{color.id}}">
+              {{color.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <br />
+          <a href="#view-quan-ly-mau-sac">
+            <button type="button" class="btn btn-outline-danger">+</button>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Size:</label>
+          <select class="form-select" name="idSize" ng-model="request.sizeId">
+            <option value="null">---Chon----</option>
+            <option ng-repeat="size in listSize" value="{{size.id}}">
+              {{size.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <br />
+          <a href="#view-quan-ly-size">
+            <button type="button" class="btn btn-outline-danger">+</button>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <label class="form-label">Style: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="style"
+            ng-model="request.style"
+          />
+        </div>
+        <div class="col-md-5">
+          <label class="form-label">Mo ta:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="moTa"
+            ng-model="request.moTa"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label class="form-label">So luong ton:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="quanity"
+            ng-model="request.quanity"
+          />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Gia:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="price"
+            ng-model="request.price"
+          />
+        </div>
+      </div>
+      <div class="row"></div>
+      <br />
+      <p style="color: red">${trangThai}</p>
+      <div class="d-grid gap-2">
+        <!-- <button
+          class="btn btn-primary"
+          type="submit"
+          onclick="return confirm('are you sure?')"
+        >
+          Them CTSP
+        </button> -->
+        <a href="#quan-ly-ctsp/add-ctsp">
+          <button class="btn btn-success col-1 m-3">Thêm</button>
+        </a>
+      </div>
+    </form>
+  </div>
+  <div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h6 class="mb-0">San pham</h6>
+        <!-- <a href="">Show All</a> -->
+      </div>
+      <div class="table-responsive">
+        <table
+          class="table text-start align-middle table-bordered table-hover mb-0"
+        >
+          <thead>
+            <tr class="text-dark">
+              <th>ID</th>
+              <th>Product Name</th>
+              <th>Category Name</th>
+              <th>Material</th>
+              <th>Color</th>
+              <th>Size</th>
+              <th>Style</th>
+              <th>Quanity</th>
+              <th>Price</th>
+              <th>Mo Ta</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="ctsp in listCTSP">
+              <td>{{ctsp.id}}</td>
+              <td>{{ctsp.product.name}}</td>
+              <td>{{ctsp.category.name}}</td>
+              <td>{{ctsp.material.name}}</td>
+              <td>{{ctsp.color.name}}</td>
+              <td>{{ctsp.size.name}}</td>
+              <td>{{ctsp.style}}</td>
+              <td>{{ctsp.quanity}}</td>
+              <td>{{ctsp.price}}</td>
+              <td>{{ctsp.moTa}}</td>
+              <td>
+                <a
+                  class="btn btn-sm btn-primary"
+                  href="#ctsp/detail/{{ctsp.id}}"
+                  >Detail</a
+                >
+                <a class="btn btn-sm btn-danger" href="#ctsp/delete/{{ctsp.id}}"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- phan trang -->
+        <nav aria-label="...">
+          <ul class="pagination pagination-sm">
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">1</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+          </ul>
+        </nav>
+        <!-- phan trang -->
+      </div>
+    </div>
+  </div>
+</section>

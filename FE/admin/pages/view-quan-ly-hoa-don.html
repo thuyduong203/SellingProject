@@ -1,0 +1,92 @@
+<div class="container-fluid pt-4 px-4">
+  <a href="#tao-hoa-don">
+    <div class="d-grid gap-2">
+      <button class="btn btn-success" type="button">Tao hoa don</button>
+    </div>
+  </a>
+</div>
+
+<!-- Recent Sales Start -->
+<div class="container-fluid pt-4 px-4">
+  <div class="bg-light text-center rounded p-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <h6 class="mb-0">Chua thanh toan</h6>
+      <!-- <a href="">Show All</a> -->
+    </div>
+    <div class="table-responsive">
+      <table
+        class="table text-start align-middle table-bordered table-hover mb-0"
+      >
+        <thead>
+          <tr class="text-dark">
+            <th scope="col">
+              <input class="form-check-input" type="checkbox" />
+            </th>
+            <th scope="col">Date</th>
+            <th scope="col">Invoice</th>
+            <th scope="col">Customer</th>
+            <!-- <th scope="col">Amount</th> -->
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="hoaDonChuaTT in listHDChuaThanhToan">
+            <td><input class="form-check-input" type="checkbox" /></td>
+            <td>{{hoaDonChuaTT.createdTime}}</td>
+            <td>{{hoaDonChuaTT.code}}</td>
+            <td>{{hoaDonChuaTT.customer.name}}</td>
+            <!-- <td>$123</td> -->
+            <td>{{hoaDonChuaTT.status == 1 ? 'Chua thanh toan' : 'Khac'}}</td>
+            <td>
+              <a class="btn btn-sm btn-primary" href="">Detail</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Recent Sales End -->
+<!-- get all HD -->
+<div class="container-fluid pt-4 px-4">
+  <div class="bg-light text-center rounded p-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <h6 class="mb-0">Quan ly hoa don</h6>
+      <!-- <a href="">Show All</a> -->
+    </div>
+    <div class="table-responsive">
+      <table
+        class="table text-start align-middle table-bordered table-hover mb-0"
+      >
+        <thead>
+          <tr class="text-dark">
+            <th scope="col">
+              <input class="form-check-input" type="checkbox" />
+            </th>
+            <th scope="col">Date</th>
+            <th scope="col">Invoice</th>
+            <th scope="col">Customer</th>
+            <!-- <th scope="col">Amount</th> -->
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="hoaDon in listHoaDon">
+            <td><input class="form-check-input" type="checkbox" /></td>
+            <td>{{hoaDon.createdTime}}</td>
+            <td>{{hoaDon.code}}</td>
+            <td>{{hoaDon.customer.name}}</td>
+            <!-- <td>$123</td> -->
+            <td>{{hoaDon.status == 1 ? 'Chua thanh toan' : 'Khac'}}</td>
+            <td>
+              <a class="btn btn-sm btn-primary" href="">Detail</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- end getAll HD -->
